@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\ayrto\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ayrto\\.nuget\\packages"
+    ]
+  }
+}
