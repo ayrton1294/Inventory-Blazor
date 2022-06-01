@@ -1,0 +1,31 @@
+﻿@using Entities
+@using Business
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Referencia</th>
+            <th>Nombre Producto</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var product in products)
+            {
+                <tr>
+                    <th>@product.ProductId</th>
+                    <th>@product.ProductName</th>
+                    <th>@product</th>
+                </tr>
+            }
+    </tbody>
+</table>
+
+@code{
+    List<ProductEntity> products = new List<ProductEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = B_Product.ProductList();
+    }
+}

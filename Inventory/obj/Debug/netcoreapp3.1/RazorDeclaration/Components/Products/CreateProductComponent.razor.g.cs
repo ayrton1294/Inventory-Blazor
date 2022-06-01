@@ -118,7 +118,7 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
+#line 35 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
        
     ProductEntity oProduct = new ProductEntity();
     List<CategoryEntity> categories = new List<CategoryEntity>();
