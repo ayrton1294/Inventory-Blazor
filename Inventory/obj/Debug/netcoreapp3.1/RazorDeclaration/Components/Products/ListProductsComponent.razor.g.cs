@@ -118,13 +118,22 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\ListProductsComponent.razor"
+#line 35 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\ListProductsComponent.razor"
       
     List<ProductEntity> products = new List<ProductEntity>();
+    List<CategoryEntity> categories = new List<CategoryEntity>();
+
+    string message;
 
     protected override async Task OnInitializedAsync()
     {
         products = B_Product.ProductList();
+        categories = B_Category.CategoryList();
+    }
+
+    private void CategoryChanged(ChangeEventArgs e)
+    {
+        message = e.Value.ToString();
     }
 
 #line default
