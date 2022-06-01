@@ -118,7 +118,7 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
+#line 37 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
        
     ProductEntity oProduct = new ProductEntity();
     List<CategoryEntity> categories = new List<CategoryEntity>();
@@ -131,11 +131,13 @@ using Business;
     private void SaveProduct()
     {
         B_Product.CreateProduct(oProduct);
+        NavManager.NavigateTo("product/list");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591

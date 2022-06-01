@@ -121,6 +121,7 @@ using Business;
 #line 35 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\ListProductsComponent.razor"
       
     List<ProductEntity> products = new List<ProductEntity>();
+    List<ProductEntity> tempProducts = new List<ProductEntity>();
     List<CategoryEntity> categories = new List<CategoryEntity>();
 
     string message;
@@ -128,12 +129,14 @@ using Business;
     protected override async Task OnInitializedAsync()
     {
         products = B_Product.ProductList();
+        tempProducts = products;
         categories = B_Category.CategoryList();
     }
 
     private void CategoryChanged(ChangeEventArgs e)
     {
-        message = e.Value.ToString();
+        //message = e.Value.ToString();
+        tempProducts = products.Where(x => x.CategoryId == e.Value.ToString()).ToList();
     }
 
 #line default

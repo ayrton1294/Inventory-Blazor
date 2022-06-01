@@ -1,6 +1,8 @@
 ﻿@using Entities
 @using Business
 
+@inject NavigationManager NavManager
+
 <div>
     <EditForm Model="oProduct">
         <div class="form-group">
@@ -22,6 +24,7 @@
         <div class="form-group">
             <label>Categoría:</label>
             <InputSelect @bind-Value="oProduct.CategoryId" class="form-control">
+                <option value="">Seleccione una categoría...</option>
                 @foreach (var category in categories)
                 {
                     <option value="@category.CategoryId">@category.CategoryName</option>
@@ -44,5 +47,6 @@
     private void SaveProduct()
     {
         B_Product.CreateProduct(oProduct);
+        NavManager.NavigateTo("product/list");
     }
 }
