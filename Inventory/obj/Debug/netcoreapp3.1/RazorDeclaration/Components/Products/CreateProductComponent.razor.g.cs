@@ -118,9 +118,15 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
+#line 31 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
        
     ProductEntity oProduct = new ProductEntity();
+    List<CategoryEntity> categories = new List<CategoryEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        categories = B_Category.CategoryList();
+    }
 
     private void SaveProduct()
     {

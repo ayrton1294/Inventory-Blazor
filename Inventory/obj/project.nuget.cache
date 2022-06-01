@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v+cZNC+RGAjHGQriO9SsK7Huq9iLGFVA3dz1MB9mCNuT30CLvBSk3weFqu2uj6SZBOZUbUUbqUhlkVxqhvQEJw==",
+  "dgSpecHash": "0O2ySUgH6wvpbfqNqN91klmqCDuLoFZ7+sxWpwJ0VQok1r21gahrhhR4n+ukXqfe8ta5Vh8lc5CFitI97VpFBg==",
   "success": true,
   "projectFilePath": "D:\\Platzi\\Blazor\\Inventory\\Inventory\\Inventory.csproj",
   "expectedPackageFiles": [
@@ -101,8 +101,7 @@
     "C:\\Users\\ayrto\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\ayrto\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ayrto\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\ayrto\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\ayrto\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+    "C:\\Users\\ayrto\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
