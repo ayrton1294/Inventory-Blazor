@@ -96,48 +96,13 @@ using Inventory.Components.Products;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 1 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
-using Entities;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
-using Business;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class CreateProductComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class UpdateProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 38 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateProductComponent.razor"
-       
-    ProductEntity oProduct = new ProductEntity();
-    List<CategoryEntity> categories = new List<CategoryEntity>();
-
-    protected override async Task OnInitializedAsync()
-    {
-        categories = B_Category.CategoryList();
-    }
-
-    private void SaveProduct()
-    {
-        B_Product.CreateProduct(oProduct);
-        NavManager.NavigateTo("product/list");
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591
