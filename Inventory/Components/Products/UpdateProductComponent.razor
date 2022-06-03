@@ -1,6 +1,8 @@
 ﻿@using Entities
 @using Business
 
+@inject NavigationManager NavManager
+
 <EditForm Model="oProduct">
     <div class="form-group">
         <label>Producto</label>
@@ -20,7 +22,7 @@
             }
         </InputSelect>
     </div>
-    @*<input type="button" value="Agregar Producto" @onclick="UpdateProduct" />*@
+    <input type="button" value="Actualizar Producto" @onclick="UpdateProduct" />
 </EditForm>
 
 @code {
@@ -35,5 +37,11 @@
         categories = B_Category.CategoryList();
         //oProduct = B_Product.ProductList().Where(x => x.ProductId == IdProduct).FirstOrDefault();
         oProduct = B_Product.ProductById(IdProduct);
+    }
+
+    public void UpdateProduct()
+    {
+        B_Product.Updateroduct(oProduct);
+        NavManager.NavigateTo("product/list");
     }
 }

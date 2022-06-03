@@ -1,0 +1,47 @@
+﻿@using Entities
+@using Business
+
+<hr />
+<a href="warehouse/create">Agregar Nueva Bodega</a>
+<hr />
+
+@if (warehouses == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <table class="display table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Referencia</th>
+                <th>Bodega</th>
+                <th>Dirección</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var warehouse in warehouses)
+            {
+                <tr>
+                    <td>@warehouse.WareHouseId</td>
+                    <td>@warehouse.WareHouseName</td>
+                    <td>@warehouse.WareHouseAddress</td>
+                    <td><a href="product/update/@warehouse.WareHouseId">Actualizar Bodega</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code{
+    [Parameter]
+    public string ToPage { get; set; }
+
+    List<WareHouseEntity> warehouses = new List<WareHouseEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        warehouses = B_WareHouse.WareHouseList();
+    }
+}

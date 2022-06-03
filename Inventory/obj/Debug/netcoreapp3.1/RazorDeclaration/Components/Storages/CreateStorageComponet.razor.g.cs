@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Inventory.Components.Products
+namespace Inventory.Components.Storages
 {
     #line hidden
     using System;
@@ -96,53 +96,13 @@ using Inventory.Components.Products;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 1 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\UpdateProductComponent.razor"
-using Entities;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\UpdateProductComponent.razor"
-using Business;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class UpdateProductComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class CreateStorageComponet : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 28 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\UpdateProductComponent.razor"
-       
-    [Parameter]
-    public string IdProduct { get; set; }
-
-    ProductEntity oProduct = new ProductEntity();
-    List<CategoryEntity> categories = new List<CategoryEntity>();
-
-    protected override async Task OnInitializedAsync()
-    {
-        categories = B_Category.CategoryList();
-        //oProduct = B_Product.ProductList().Where(x => x.ProductId == IdProduct).FirstOrDefault();
-        oProduct = B_Product.ProductById(IdProduct);
-    }
-
-    public void UpdateProduct()
-    {
-        B_Product.Updateroduct(oProduct);
-        NavManager.NavigateTo("product/list");
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591
