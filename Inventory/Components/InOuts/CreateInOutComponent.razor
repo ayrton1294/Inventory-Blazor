@@ -13,35 +13,43 @@
 
 <hr />
 
-    <EditForm Model="oInOutPut">
-        <div class="form-group">
-            <InputSelect class="form-control" @bind-Value="oInOutPut.StorageId">
-                <option value="">Seleccione una producto</option>
-                @foreach (var storage in storages)
-                {
-                    <option value="@storage.StorageId">@storage.Product.ProductName</option>
-                }
-            </InputSelect>
-        </div>
-        <div class="form-group">
-            <label>Escriba la Cantidad</label>
-            <InputNumber class="form-control" @bind-Value="oInOutPut.Quantity"></InputNumber>
-        </div>
-        <div class="form-group">
-            <label>@question</label>
-            <InputCheckbox class="form-control" @bind-Value="oInOutPut.IsInput"></InputCheckbox>
-        </div>
-        <input class="form-control" type="button" value="@buttonValue" @onclick="SaveInOut"/>
-    </EditForm>
+<EditForm Model="oInOutPut">
+    <div class="form-group">
+        <InputSelect class="form-control" @bind-Value="oInOutPut.StorageId">
+            <option value="">Seleccione una producto</option>
+            @foreach (var storage in storages)
+            {
+                <option value="@storage.StorageId">@storage.Product.ProductName</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="form-group">
+        <label>Escriba la Cantidad</label>
+        <InputNumber class="form-control" @bind-Value="oInOutPut.Quantity"></InputNumber>
+    </div>
+    <div class="form-group">
+        <label>@question</label>
+        <InputCheckbox class="form-control" @bind-Value="oInOutPut.IsInput"></InputCheckbox>
+    </div>
+    <input class="form-control" type="button" value="@buttonValue" @onclick="SaveInOut" />
+</EditForm>
 
+<div class="text-center h4">
+    @message
+</div>
 
 @code {
     InputOutputEnitity oInOutPut = new InputOutputEnitity();
     List<WareHouseEntity> warehouses = new List<WareHouseEntity>();
     List<StorageEntity> storages = new List<StorageEntity>();
 
-    string question {get => oInOutPut.IsInput ? "¿Es una Entrada?" : "¿Es una Salida?"; }
+    ProductEntity oProduct = new ProductEntity();
+    StorageEntity oStorage = new StorageEntity();
+
+    string question { get => oInOutPut.IsInput ? "¿Es una Entrada?" : "¿Es una Salida?"; }
     string buttonValue => oInOutPut.IsInput ? "Registrar Entrada" : "Registrar Salida";
+
+    string message;
 
     protected override async Task OnInitializedAsync()
     {
@@ -56,6 +64,44 @@
 
     private void SaveInOut()
     {
+        oStorage = storages.LastOrDefault(x => x.StorageId == oInOutPut.StorageId);
+        oProduct = oStorage.Product;
 
+        if (oInOutPut.IsInput)
+        {
+            oStorage.PartialQuantity = oStorage.PartialQuantity + oInOutPut.Quantity;
+            B_Storage.UpdateStorage(oStorage);
+
+            oProduct.TotalQuantity = oProduct.TotalQuantity + oInOutPut.Quantity;
+            B_Product.Updateroduct(oProduct);
+
+            message = $"El producto {oProduct.ProductName} ha sido actualizado";
+        }
+        else
+        {
+            if (IsBiggerThanZero(oInOutPut.Quantity, oStorage.PartialQuantity))
+            {
+                oStorage.PartialQuantity = oStorage.PartialQuantity - oInOutPut.Quantity;
+                B_Storage.UpdateStorage(oStorage);
+
+                oProduct.TotalQuantity = oProduct.TotalQuantity - oInOutPut.Quantity;
+                B_Product.Updateroduct(oProduct);
+
+                message = $"El producto {oProduct.ProductName} ha sido actualizado";
+            }
+            else
+            {
+                message = $"No existe la cantidad suficiente en bodega para el producto {oProduct.ProductName}, la cantidad actual es {oStorage.PartialQuantity}";
+            }
+        }
+    }
+
+    private bool IsBiggerThanZero(int quantity, int storageQuantiy)
+    {
+        if (storageQuantiy >= quantity)
+        {
+            return true;
+        }
+        return false;
     }
 }

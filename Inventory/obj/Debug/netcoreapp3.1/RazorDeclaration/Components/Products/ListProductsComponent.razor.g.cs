@@ -132,7 +132,7 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\ListProductsComponent.razor"
+#line 39 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\ListProductsComponent.razor"
       
     List<ProductEntity> products = new List<ProductEntity>();
     List<ProductEntity> tempProducts = new List<ProductEntity>();
