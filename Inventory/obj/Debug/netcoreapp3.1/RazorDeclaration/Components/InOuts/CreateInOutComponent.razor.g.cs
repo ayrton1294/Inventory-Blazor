@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Inventory.Shared
+namespace Inventory.Components.InOuts
 {
     #line hidden
     using System;
@@ -110,13 +110,42 @@ using Inventory.Components.InOuts;
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+#nullable restore
+#line 1 "D:\Platzi\Blazor\Inventory\Inventory\Components\InOuts\CreateInOutComponent.razor"
+using Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\Platzi\Blazor\Inventory\Inventory\Components\InOuts\CreateInOutComponent.razor"
+using Business;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class CreateInOutComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 14 "D:\Platzi\Blazor\Inventory\Inventory\Components\InOuts\CreateInOutComponent.razor"
+       
+    InputOutputEnitity oInOutPut = new InputOutputEnitity();
+    List<WareHouseEntity> warehouses = new List<WareHouseEntity>();
+    List<StorageEntity> storages = new List<StorageEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        warehouses = B_WareHouse.WareHouseList();
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

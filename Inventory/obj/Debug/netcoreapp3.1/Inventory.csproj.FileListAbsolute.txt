@@ -123,3 +123,5 @@ D:\Platzi\Blazor\Inventory\Inventory\obj\Debug\netcoreapp3.1\Razor\Components\Wa
 D:\Platzi\Blazor\Inventory\Inventory\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\CreateCategoryPage.razor.g.cs
 D:\Platzi\Blazor\Inventory\Inventory\obj\Debug\netcoreapp3.1\Razor\Pages\Categories\ListCategoryPage.razor.g.cs
 D:\Platzi\Blazor\Inventory\Inventory\obj\Debug\netcoreapp3.1\Razor\Pages\Storages\CreateStoragePage.razor.g.cs
+D:\Platzi\Blazor\Inventory\Inventory\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\InOuts\CreateInOutComponent.razor.g.cs
+D:\Platzi\Blazor\Inventory\Inventory\obj\Debug\netcoreapp3.1\Razor\Components\InOuts\CreateInOutComponent.razor.g.cs
