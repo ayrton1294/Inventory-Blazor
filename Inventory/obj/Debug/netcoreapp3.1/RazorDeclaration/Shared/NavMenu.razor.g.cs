@@ -96,6 +96,13 @@ using Inventory.Components.Products;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "D:\Platzi\Blazor\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Storages;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,7 +111,7 @@ using Inventory.Components.Products;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "D:\Platzi\Blazor\Inventory\Inventory\Shared\NavMenu.razor"
+#line 38 "D:\Platzi\Blazor\Inventory\Inventory\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

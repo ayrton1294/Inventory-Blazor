@@ -26,6 +26,15 @@ namespace Business
             }
         }
 
+        public static bool IsProductInWarehouse(string idStorageId)
+        {
+            using (var db = new InventoryContext())
+            {
+                var product = db.Storages.ToList().Where(x => x.StorageId == idStorageId).Any();
+                return product;
+            }
+        }
+
         public static void UpdateStorage(StorageEntity oStorage)
         {
             using (var db = new InventoryContext())

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Inventory.Components.Products
+namespace Inventory.Pages.Storages
 {
     #line hidden
     using System;
@@ -97,46 +97,20 @@ using Inventory.Components.Products;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateCategoryComponent.razor"
-using Entities;
+#line 13 "D:\Platzi\Blazor\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Storages;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateCategoryComponent.razor"
-using Business;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class CreateCategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/storage/create")]
+    public partial class CreateStoragePage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 26 "D:\Platzi\Blazor\Inventory\Inventory\Components\Products\CreateCategoryComponent.razor"
-       
-    CategoryEntity oCategory = new CategoryEntity();
-
-    private void Save()
-    {
-        B_Category.CreateCategory(oCategory);
-        NavManager.NavigateTo("category/list");
-    }
-
-    private void HandleValidSubmit()
-    {
-        Console.WriteLine("OnValidSubmit");
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591

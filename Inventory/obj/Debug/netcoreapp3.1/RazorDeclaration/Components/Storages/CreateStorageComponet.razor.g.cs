@@ -96,6 +96,27 @@ using Inventory.Components.Products;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "D:\Platzi\Blazor\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Storages;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 1 "D:\Platzi\Blazor\Inventory\Inventory\Components\Storages\CreateStorageComponet.razor"
+using Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\Platzi\Blazor\Inventory\Inventory\Components\Storages\CreateStorageComponet.razor"
+using Business;
+
+#line default
+#line hidden
+#nullable disable
     public partial class CreateStorageComponet : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -103,6 +124,41 @@ using Inventory.Components.Products;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 32 "D:\Platzi\Blazor\Inventory\Inventory\Components\Storages\CreateStorageComponet.razor"
+       
+    StorageEntity oStorage = new StorageEntity();
+    List<WareHouseEntity> warehouses = new List<WareHouseEntity>();
+    List<ProductEntity> products = new List<ProductEntity>();
+
+    string message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        warehouses = B_WareHouse.WareHouseList();
+        products = B_Product.ProductList();
+    }
+
+    private void SaveStorage()
+    {
+        oStorage.StorageId = $"{oStorage.WareHouseId}-{oStorage.ProductId}";
+
+        if (!B_Storage.IsProductInWarehouse(oStorage.StorageId))
+        {
+            oStorage.LastUpdate = DateTime.Now;
+            B_Storage.CreateStorage(oStorage);
+            message = "Producto Registrado";
+        }
+        else
+        {
+            message = "Producto ya existe en la bodega";
+        }
+
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

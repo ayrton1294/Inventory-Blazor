@@ -96,6 +96,13 @@ using Inventory.Components.Products;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "D:\Platzi\Blazor\Inventory\Inventory\_Imports.razor"
+using Inventory.Components.Storages;
+
+#line default
+#line hidden
+#nullable disable
     public partial class SurveyPrompt : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

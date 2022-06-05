@@ -170,21 +170,21 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            WareHouseId = "52a47b16-dd07-4e87-8896-b8ac9bac2982",
+                            WareHouseId = "072d1d80-4b30-4c31-b436-2d971cc66108",
                             WareHouseAddress = "932 Pallet Street, La Grange (Dutchess), NY 12540",
-                            WareHouseName = "Main WareHouse"
+                            WareHouseName = "Bodega Principal"
                         },
                         new
                         {
-                            WareHouseId = "8f9bfe16-ec1e-4173-a361-bc02e7635645",
+                            WareHouseId = "135f748b-ffda-4f44-9331-d3e87494ee0d",
                             WareHouseAddress = "4447 Dane Street, Yakima, WA 98908",
-                            WareHouseName = "Second WareHouse"
+                            WareHouseName = "Bodega Secundaria"
                         },
                         new
                         {
-                            WareHouseId = "b5e56016-df8d-4df9-a3c0-bc5a8b8de733",
+                            WareHouseId = "a1557e34-4ac0-42fd-8510-89f151965b1a",
                             WareHouseAddress = "3003 Arrowood Drive, Jacksonville, FL 32257",
-                            WareHouseName = "Third WareHouse"
+                            WareHouseName = "Bogeda Terciaria"
                         });
                 });
 

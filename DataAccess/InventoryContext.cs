@@ -35,9 +35,9 @@ namespace DataAccess
                 new CategoryEntity { CategoryId = "VDJ", CategoryName = "Video Juegos" }
                 );
             modelBuilder.Entity<WareHouseEntity>().HasData(
-                new WareHouseEntity() { WareHouseId = Guid.NewGuid().ToString(), WareHouseName = "Main WareHouse", WareHouseAddress = "932 Pallet Street, La Grange (Dutchess), NY 12540" },
-                new WareHouseEntity() { WareHouseId = Guid.NewGuid().ToString(), WareHouseName = "Second WareHouse", WareHouseAddress = "4447 Dane Street, Yakima, WA 98908" },
-                new WareHouseEntity() { WareHouseId = Guid.NewGuid().ToString(), WareHouseName = "Third WareHouse", WareHouseAddress = "3003 Arrowood Drive, Jacksonville, FL 32257" }
+                new WareHouseEntity() { WareHouseId = Guid.NewGuid().ToString(), WareHouseName = "Bodega Principal", WareHouseAddress = "932 Pallet Street, La Grange (Dutchess), NY 12540" },
+                new WareHouseEntity() { WareHouseId = Guid.NewGuid().ToString(), WareHouseName = "Bodega Secundaria", WareHouseAddress = "4447 Dane Street, Yakima, WA 98908" },
+                new WareHouseEntity() { WareHouseId = Guid.NewGuid().ToString(), WareHouseName = "Bogeda Terciaria", WareHouseAddress = "3003 Arrowood Drive, Jacksonville, FL 32257" }
                 );
         }
     }
