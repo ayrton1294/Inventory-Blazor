@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Business
     {
         public static List<StorageEntity> StorageList()
         {
-            using(var db = new InventoryContext())
+            using (var db = new InventoryContext())
             {
                 return db.Storages.ToList();
             }
@@ -32,6 +33,14 @@ namespace Business
             {
                 var product = db.Storages.ToList().Where(x => x.StorageId == idStorageId).Any();
                 return product;
+            }
+        }
+
+        public static List<StorageEntity> StorageProductByWarehouse(string idWarehouse)
+        {
+            using (var db = new InventoryContext())
+            {
+                return db.Storages.Include(s => s.Product).Include(s => s.WareHouse).Where(x => x.WareHouseId == idWarehouse).ToList();
             }
         }
 

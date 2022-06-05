@@ -132,15 +132,29 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 14 "D:\Platzi\Blazor\Inventory\Inventory\Components\InOuts\CreateInOutComponent.razor"
+#line 38 "D:\Platzi\Blazor\Inventory\Inventory\Components\InOuts\CreateInOutComponent.razor"
        
     InputOutputEnitity oInOutPut = new InputOutputEnitity();
     List<WareHouseEntity> warehouses = new List<WareHouseEntity>();
     List<StorageEntity> storages = new List<StorageEntity>();
 
+    string question {get => oInOutPut.IsInput ? "¿Es una Entrada?" : "¿Es una Salida?"; }
+    string buttonValue => oInOutPut.IsInput ? "Registrar Entrada" : "Registrar Salida";
+
     protected override async Task OnInitializedAsync()
     {
         warehouses = B_WareHouse.WareHouseList();
+    }
+
+    private void OnChangedWarehouse(ChangeEventArgs e)
+    {
+        var idWarehouse = e.Value.ToString();
+        storages = B_Storage.StorageProductByWarehouse(idWarehouse);
+    }
+
+    private void SaveInOut()
+    {
+
     }
 
 #line default
